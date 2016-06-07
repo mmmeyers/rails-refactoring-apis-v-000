@@ -23,6 +23,7 @@ describe 'GithubService' do
       expect(WebMock).to have_requested(:post, "https://github.com/login/oauth/access_token").
         with(:body => {"client_id"=> ENV["GITHUB_CLIENT"], "client_secret"=> ENV["GITHUB_SECRET"], "code"=>"20"},
         :headers => {'Accept'=>'application/json'})
+
     end
 
     it "sets @access_token for a GithubService" do
